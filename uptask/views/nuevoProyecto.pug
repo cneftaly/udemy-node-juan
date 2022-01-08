@@ -6,7 +6,7 @@ block contenido
 
     if errores
       each error in errores 
-        // UPDATE:
+        // UPDATE: Faltaba agregar la clase error a alerta
         .alerta.error=error.texto 
 
     form.agregar-proyecto(action="/nuevo-proyecto" method="POST")
