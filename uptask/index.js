@@ -1,7 +1,7 @@
 const express = require('express');
 const routes = require('./routes');
 const path = require('path');
-//const bodyParser = require('body-parser'); UPDATE:
+//const bodyParser = require('body-parser'); UPDATE: Ya no es necesario; está incluido en express
 
 const db = require('./config/db');
 
@@ -16,7 +16,7 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname,  './views'));
-app.use(express.urlencoded({extended: true})); // UPDATE:
+app.use(express.urlencoded({extended: true})); // UPDATE: Se cambió bodyParser por express
 app.use('/', routes());
 
 app.listen(3000);

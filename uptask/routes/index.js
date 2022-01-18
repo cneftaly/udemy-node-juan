@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const proyectosController = require('../controllers/proyectosController');
 
-const { body } = require('express-validator/check');
+const { body } = require('express-validator'); // UPDATE: Ya no se usa express-validator/check
 
 module.exports = function() {
   router.get('/', proyectosController.proyectosHome);
