@@ -10,9 +10,12 @@ exports.proyectosHome = async (req, res) => {
   });
 };
 
-exports.formularioProyecto = (req, res) => {
+exports.formularioProyecto = async (req, res) => {
+  const proyectos = await Proyectos.findAll();
+
   res.render('nuevoProyecto', {
-    nombrePagina: 'Nuevo Proyecto'
+    nombrePagina: 'Nuevo Proyecto',
+    proyectos
   })
 };
 
